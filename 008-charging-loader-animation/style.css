@@ -6,7 +6,7 @@ html, body {
 	background: linear-gradient(to bottom, teal, aqua);
 }
 
-.battery {
+/* .battery {
 	width: 6em;
 	height: 3em;
 	color: midnightblue;
@@ -21,29 +21,29 @@ html, body {
 	animation: charge 5s steps(8) infinite;
 }
 
+ */
 
-/* 
 .battery {
 	width: 6em;
 	height: 3em;
-	font-size: 2em;
 	color: midnightblue;
 	border: 0.5em solid currentcolor;
 	border-radius: 0.2em;
+	font-size: 2em;
 	position: relative;
-	background-image: linear-gradient(to right, whitesmoke,whitesmoke);
-	background-repeat: no repeat;
+	background-image: linear-gradient(to right, whitesmoke, whitesmoke);
+	background-repeat: no-repeat;
 	background-size: 30% 80%;
-	background-position: top 0.3em right 0.3em;
+	background-position: top 0.3em left 0.3em;
 	animation: charge 5s steps(8) infinite;
 }
- */
+
 .battery::after {
 	content: '';
 	position: absolute;
 	width: 0.5em;
 	height: 2em;
-	background-color: currentColor;
+	background-color: currentcolor;
 	top: 0.5em;
 	right: -1em;
 	border-radius: 0 0.2em 0.2em 0;
