@@ -16,3 +16,38 @@ body {
 	position: relative; 
 }
 
+/* 再用伪元素画中间一层的样式 */
+.circle {
+    position: relative;
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-width: 0.4em;
+    border-style: solid;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: orange;
+    border-bottom-color: cyan;
+}
+
+
+/* 再用伪元素画最内一层的样式： */
+
+.circle::before {
+    content: '';
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-width: 0.4em;
+    border-style: solid;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: yellow;
+    border-bottom-color: limegreen;
+}
