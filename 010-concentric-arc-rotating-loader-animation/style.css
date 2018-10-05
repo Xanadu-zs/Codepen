@@ -1,22 +1,31 @@
 html,
-body {
-	margin: 0;
-	height: 100vh;
+body,
+.circle {
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: black;
 }
 
+/* 一共画三层圆弧，先画最外一层的样式： */
+
 .circle {
-	font-size: 20px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative; 
+	width: 21em;
+	height: 21em;
+	border-width: 0.7em;
+	border-style: solid;
+	border-radius: 50%;
+	border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #F9B7B7;
+    border-bottom-color: #6BD6EF;
+
 }
 
 /* 再用伪元素画中间一层的样式 */
+
+
 .circle {
     position: relative;
 }
@@ -26,28 +35,49 @@ body {
     position: absolute;
     width: 75%;
     height: 75%;
-    border-width: 0.4em;
+    border-width: 0.7em;
     border-style: solid;
     border-radius: 50%;
     border-left-color: transparent;
     border-right-color: transparent;
-    border-top-color: orange;
-    border-bottom-color: cyan;
+    border-top-color: #BDB8B8;
+    border-bottom-color: #08C4F6;
 }
-
 
 /* 再用伪元素画最内一层的样式： */
 
-.circle::before {
+.circle::after {
     content: '';
     position: absolute;
-    width: 75%;
-    height: 75%;
-    border-width: 0.4em;
+    width: 50%;
+    height: 50%;
+    border-width: 0.7em;
     border-style: solid;
     border-radius: 50%;
     border-left-color: transparent;
     border-right-color: transparent;
-    border-top-color: yellow;
-    border-bottom-color: limegreen;
+    border-top-color: #27FEBB;
+    border-bottom-color: #FCF07D;
+}
+
+@keyframes animate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(1440deg);
+    }
+}
+
+.circle {
+    animation: animate 4s ease-in-out infinite alternate;
+}
+
+.circle::before {
+    animation: animate 8s ease-in-out infinite alternate;
+}
+
+.circle::after {
+    animation: animate 16s ease-in-out infinite alternate;
 }
